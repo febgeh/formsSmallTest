@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>forms</title>
+</head>
+<body>
+    <div class="loader">
+        <div class="cube" id="cube"></div>
+        <div class="cube1" id="cube"></div>
+        <div class="cube2" id="cube"></div>
+        <div class="cube3" id="cube"></div>
+        <div class="cube4" id="cube"></div>
+        <div class="cube5" id="cube"></div>
+        <div class="blurred">
+            <div class="small-animation">
+                <div class="cube" id="cube"></div>
+                <div class="cube1" id="cube"></div>
+                <div class="cube2" id="cube"></div>
+                <div class="cube3" id="cube"></div>
+                <div class="cube4" id="cube"></div>
+                <div class="cube5" id="cube"></div>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="container">
+            <div id="scene">
+                <div class="layer" id="Ball1"><img src="./pics/NoBcB.png" alt="" id="Ball"></div>
+                <div class="layer" id="sand"><img src="./pics/sand.png" alt="" id="img" ></div>
+                <div class="layer" id="Ring1"><img src="./pics/noBcR.png" alt="" id="Ring"></div>
+            </div>
+        </div>
+        <div class="login" id="login" data-depth-x="-0.5" data-depth-y="-0.5">
+            <h2>Login</h2>
+            <div class="inputBox">
+                <form>
+                    <input type="email" placeholder="email" id="email" name="email"><br><br>
+                    <input type="password" placeholder="password" id="password" name="password" maxlength="16" minlength="10"style="margin-bottom: 40px;"><br><br>
+                    <input type="submit" value="submit" id="submit" name="submit" > 
+                </form>
+                <input type="submit" value="change" id="change" style="display: none;">
+            </div>
+        </div>
+        <div class="cursor"></div>
+        <div class="cursor2"></div>
+
+    </section>
+    
+    <script src="script.js"></script>
+</body>
+</html>
