@@ -1,13 +1,16 @@
-// script.js
-
+//initiate variables
 let form = document.querySelector('form')
 let email = document.getElementById("email")
 let password = document.getElementById("password")
 let submit = document.getElementById("submit")
 let change = document.getElementById("change")
 
+
+// Password validation
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+
     if (email.value === "") {
         alert("Email is empty");
         return;
@@ -16,29 +19,39 @@ form.addEventListener('submit', (e) => {
         return;
     }
 
-    // Password validation
+    //check alert
     const passwordValue = password.value;
     if (!isValidPassword(passwordValue)) {
         alert("Password must include at least one capital letter, one number, and one special character.");
         return;
     }
 
+    const emailValue = email.value;
+    if (!isValidEmail(emailValue)) {
+        alert("Email is not valid 💀^_~");
+        return;
+    }
+
+    //switch button
     change.style.display = "block"
     submit.style.display = "none"
 
+    //stringify and local storage
     const fd = new FormData(form);
     const obj = Object.fromEntries(fd)
-    console.log(obj)
 
     const json = JSON.stringify(obj)
     localStorage.setItem('form', json)
 
+    //read only before change button
     email.readOnly = true;
     email.innerText = email.value
     password.readOnly = true;
     password.innerText = password.value
 })
 
+
+//can edit only if change is pressed
 change.addEventListener("click", function () {
     email.readOnly = false;
     password.readOnly = false;
@@ -46,6 +59,7 @@ change.addEventListener("click", function () {
     submit.style.display = "block"
 })
 
+//validate password
 function isValidPassword(password) {
     const capitalLetter = /[A-Z]/;
     const number = /[0-9]/;
@@ -57,6 +71,14 @@ function isValidPassword(password) {
         specialCharacter.test(password)
     );
 }
+
+//validate gmail
+function isValidEmail(email) {
+    const gmail = "@gmail.com";
+
+    return email.endsWith(gmail);
+}
+
 
 // let cursor = document.querySelector(".cursor")
 // let cursor2 = document.querySelector(".cursor2")
@@ -75,6 +97,8 @@ function isValidPassword(password) {
 
 // });
 
+
+//movment after cursor/client x and y value hehehehehehehehehhehehehehehhehehehhedbdewinoiewnciupr ecn oåirj fouirqm ocimneruipf
 let cursor = document.querySelector(".cursor");
 let cursor2 = document.querySelector(".cursor2");
 let Ring = document.getElementById('Ring1');
@@ -103,6 +127,7 @@ window.addEventListener('mousemove', function (event) {
 });
 
 
+//extreamly/unnecessarily long animation
 document.addEventListener('DOMContentLoaded', function () {
     const loader = document.querySelector(".loader");
     
